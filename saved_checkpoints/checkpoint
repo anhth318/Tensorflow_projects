@@ -1,0 +1,2 @@
+model_checkpoint_path: "cp_animals_image_recognition.ckpt"
+all_model_checkpoint_paths: "cp_animals_image_recognition.ckpt"

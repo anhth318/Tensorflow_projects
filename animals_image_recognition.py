@@ -86,8 +86,11 @@ cp_callback = ModelCheckpoint(
     period=5)
 
 # Train the model
-numpy.random.seed(seed)
-model.fit(X_train, y_train, validation_data=(X_test, y_test), epochs=epochs, callbacks=[cp_callback], batch_size=64)
+# numpy.random.seed(seed)
+# model.fit(X_train, y_train, validation_data=(X_test, y_test), epochs=epochs, callbacks=[cp_callback], batch_size=64)
+
+# Loads the weights
+model.load_weights(checkpoint_path)
 
 # Model evaluation
 scores = model.evaluate(X_test, y_test, verbose=0)
