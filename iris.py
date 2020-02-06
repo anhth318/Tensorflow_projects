@@ -29,3 +29,13 @@ train_dataset = tf.data.experimental.make_csv_dataset(
     label_name=label_name,
     num_epochs=1)
 
+# features, labels = next(iter(train_dataset))
+#
+# print(features)
+
+model = tf.keras.Sequential([
+  tf.keras.layers.Dense(10, activation=tf.nn.relu, input_shape=(4,)),  # input shape required
+  tf.keras.layers.Dense(10, activation=tf.nn.relu),
+  tf.keras.layers.Dense(3)
+])
+
